@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Formatter - HTML CSS JS JSON</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.36.1/min/vs/editor/editor.main.css">
+</head>
+<body class="bg-gray-100">
+    <div class="p-4">
+        <!-- Action Buttons -->
+        <div class="flex justify-center gap-2 mb-4">
+            <div class="flex items-center gap-2 mr-4">
+                <input type="checkbox" id="autoFormat" checked 
+                    class="w-4 h-4 text-emerald-500 rounded border-gray-300 focus:ring-emerald-500">
+                <label for="autoFormat" class="text-gray-700">Auto Format</label>
+            </div>
+            <button class="bg-emerald-500 text-white py-2 px-4 rounded hover:bg-emerald-600" id="uploadBtn">
+                Upload Data
+            </button>
+            <button class="bg-emerald-500 text-white py-2 px-4 rounded hover:bg-emerald-600" id="validateBtn">
+                Validate
+            </button>
+            <button class="bg-emerald-500 text-white py-2 px-4 rounded hover:bg-emerald-600" id="formatBtn">
+                Format / Beautify
+            </button>
+            <button class="bg-emerald-500 text-white py-2 px-4 rounded hover:bg-emerald-600" id="minifyBtn">
+                Minify / Compact
+            </button>
+            <button class="bg-emerald-500 text-white py-2 px-4 rounded hover:bg-emerald-600" id="downloadBtn">
+                Download
+            </button>
+        </div>
+
+        <div class="flex gap-4 h-[calc(100vh-7rem)]">
+            <!-- Left Panel -->
+            <div class="w-1/2 flex flex-col bg-[#1e1e1e] rounded-lg overflow-hidden">
+                <div class="bg-[#333333] p-2 flex justify-between items-center">
+                    <div class="flex items-center gap-2">
+                        <a class="text-white px-2 py-1 hover:bg-[#444444] rounded">QLamGithub</a>
+                        <button class="text-white px-2 py-1 hover:bg-[#444444] rounded">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M10 12l-4-4h8l-4 4z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <select id="languageSelect" class="bg-[#333333] text-white px-2 py-1 rounded hover:bg-[#444444]">
+                            <option value="json">JSON</option>
+                            <option value="html">HTML</option>
+                            <option value="css">CSS</option>
+                            <option value="javascript">JavaScript</option>
+                        </select>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button class="text-white" id="copyBtn" aria-label="Copy">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div id="leftEditor" class="flex-1"></div>
+            </div>
+
+            <!-- Right Panel -->
+            <div class="w-1/2 flex flex-col bg-[#1e1e1e] rounded-lg overflow-hidden">
+                <div class="bg-[#333333] p-2 flex justify-between items-center">
+                    <div class="flex items-center gap-2">
+                        <span class="text-white px-2 py-1">Code</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button class="text-white" id="copyRightBtn" aria-label="Copy">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div id="rightEditor" class="flex-1"></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.36.1/min/vs/loader.min.js"></script>
+    <script src="https://unpkg.com/prettier@2.8.8/standalone.js"></script>
+    <script src="https://unpkg.com/prettier@2.8.8/parser-html.js"></script>
+    <script src="https://unpkg.com/prettier@2.8.8/parser-postcss.js"></script>
+    <script src="https://unpkg.com/prettier@2.8.8/parser-babel.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
